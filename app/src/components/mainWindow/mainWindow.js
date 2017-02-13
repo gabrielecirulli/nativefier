@@ -34,6 +34,10 @@ function createMainWindow(options, onAppQuit, setDockBadge) {
         x: mainWindowState.x,
         y: mainWindowState.y,
         autoHideMenuBar: !options.showMenuBar,
+        // Add support for different Title Bar Styles
+        // https://github.com/electron/electron/blob/master/docs/api/browser-window.md
+        // https://github.com/jiahaog/nativefier/issues/35
+        titleBarStyle: options.titleBarStyle,
         // Convert dashes to spaces because on linux the app name is joined with dashes
         title: options.name,
         webPreferences: {
